@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Kevin Proto</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+<form name="submit-to-google-sheet">
+<div>
+<label>Date</label>
+  <input name="Date" type="date" placeholder="date" required>
+<label>Time</label>
+  <input name="Time" type="time" placeholder="Time" required>
+<label>Carrier</label>
+  <input name="Carrier" type="text" placeholder="Carrier" required>
+<label>Confirmation#</label>
+  <input name="Confirmation_No" type="text" placeholder="Confirmation#" required>
+<label>Skids</label>
+  <input name="Skids" type="text" placeholder="Skids" required>
+<label>Pieces</label>
+  <input name="Pieces" type="text" placeholder="Pieces" required>
+<label>PO</label>
+  <input name="PO" type="text" placeholder="PO" required>
+  <button type="submit">Send</button>
+</form>
+			<div id="wrapper">
+
+
+						
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwaNiWkdMHzlCEkdD7cl92mmIkEzAHPJV1NdFhj3nUIf4uwL0jd5zHSLDwOwq10tdU6/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+	</body>
+</html>
