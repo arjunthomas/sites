@@ -7,6 +7,6 @@ function togglePlay() {
 		
 	} else {
 		audio.pause();
-		pause.innerHTML = "Story";
+		pause.innerHTML = "Our Story";
 	}
 }
