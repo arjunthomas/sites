@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <title>Whatsapp Unknown</title>
+</head>
+<body>
+  <input type="text" id="num" name="num">
+  <button id="button">CHAT!</button>
+</body>
+<script type="text/javascript">
+   $(document).ready(function(){
+    url = "https://wa.me/";
+    $("#button").click(function(){
+        var num = $("#num").val();
+
+        window.location.replace(url+num);
+    });
+});
+</script>
+</html>
